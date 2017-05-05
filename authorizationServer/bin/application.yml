@@ -1,0 +1,10 @@
+security:
+  oauth2:
+    client:
+      client-id: test
+      client-secret: test123
+      scope: read,write
+      auto-approve-scopes: '.*'
+      authorized-grant-types: authorization_code,password,refresh_token,implicit,client_credentials
+      access-token-validity-seconds: 1120
+      refresh-token-validity-seconds: 6001

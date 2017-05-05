@@ -1,0 +1,79 @@
+def nexusurl = System.getProperty("nexusurl") ?: "${nexusurldefault}"
+
+def devrepourl="${nexusurl}/repository/maven-snapshots/"
+def relrepourl="${nexusurl}/repository/maven-releases/"
+def pubrepourl= "${nexusurl}/repository/maven-public/"
+
+println "nexus url : ${nexusurl}"
+
+
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+		nexusurl = System.getProperty("nexusurl") ?: "http://192.168.81.66:8081"
+		 pubrepourl= "${nexusurl}/repository/maven-public/"
+	}
+	repositories {
+		mavenLocal()
+	    maven { url "${pubrepourl}" } 
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'org.springframework.boot'
+//apply plugin: 'war'
+apply plugin:  'maven'
+apply plugin: 'idea'
+
+
+
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenLocal()
+    maven { url pubrepourl } // ????????
+     maven { url "http://repo.maven.apache.org/maven2" }
+	mavenCentral()
+}
+
+dependencies {
+
+    compile('org.springframework.boot:spring-boot-starter')
+		//  该依赖对于编译发行是必须的
+		compile('org.springframework.boot:spring-boot-starter-web')
+		 
+		//添加 Thymeleaf 的依赖
+		compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+		 
+		// 添加  Spring Security 依赖
+		compile('org.springframework.boot:spring-boot-starter-security')
+		 
+		// 添加   Thymeleaf Spring Security 依赖，与 Thymeleaf 版本一致都是 3.x
+		compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE')
+		 
+		// 添加 Spring Security OAuth2 依赖
+		compile('org.springframework.security.oauth:spring-security-oauth2')
+ 
+    //该依赖对于编译测试是必须的，默认包含编译产品依赖和编译时依
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.3.RELEASE') {
+			exclude(module: 'commons-logging')
+    }
+    
+    
+	//  添加 Spring Security Test 依赖
+	testCompile('org.springframework.security:spring-security-test')
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
