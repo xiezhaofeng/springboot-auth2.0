@@ -1,0 +1,27 @@
+# oauth2 自己的授权服务器基本配置支持
+security:
+  oauth2:
+    client:
+      clientId: test
+      clientSecret: test123
+      accessTokenUri: http://localhost:8080/oauth/access_token
+      userAuthorizationUri: http://localhost:8080/oauth/access_token
+      scope: read,write,trust
+      authenticationScheme: query
+      clientAuthenticationScheme: form
+#      authorities: ROLE_CLIENT,ROLE_TRUSTED_CLIENT,ROLE_ADMIN,ROLE_USER
+      auto-approve-scopes: '.*'
+      authorized-grant-types: authorization_code,password,refresh_token,implicit,client_credentials
+      access-token-validity-seconds: 1120
+      refresh-token-validity-seconds: 6001
+    resource:
+      clientId: test
+      clientSecret: test123
+      user-info-uri: http://localhost:8080/user
+      token-info-uri: http://localhost:8080/oauth/check_token
+  basic:
+    enabled: true
+    heck-token-enabled: true
+loggin:
+  level:
+    org.springframework: debug
