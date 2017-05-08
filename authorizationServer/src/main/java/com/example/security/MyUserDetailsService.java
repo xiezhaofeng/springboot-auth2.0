@@ -37,8 +37,10 @@ public class MyUserDetailsService implements UserDetailsService
 	private Collection<GrantedAuthority> getAuthorities()
 	{
 		List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
-        authList.add(new SimpleGrantedAuthority("ROLE_USER"));
-        authList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+//        authList.add(new SimpleGrantedAuthority("ROLE_USER"));
+//        authList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        authList.add(new SimpleGrantedAuthority("USER"));
+        authList.add(new SimpleGrantedAuthority("ADMIN"));
 
         return authList;
 	}

@@ -37,7 +37,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
         resources.resourceId(RESOURCE_ID);
         resources.tokenStore(tokenStore);
     }
-
+    @Bean
+    public TokenStore tokenStore() {
+        return new InMemoryTokenStore();
+    }
     
     @Configuration
     @EnableAuthorizationServer
@@ -46,15 +49,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
 //        @Resource(name = "OAuth")
 //        @Autowired
 //        DataSource dataSource;
-
-        @Bean
-        public TokenStore tokenStore() {
-            return new InMemoryTokenStore();
-        }
+    	private @Autowired TokenStore tokenStore;
+        
 
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-            endpoints.tokenStore(tokenStore());
+            endpoints.tokenStore(tokenStore);
         }
 
     }

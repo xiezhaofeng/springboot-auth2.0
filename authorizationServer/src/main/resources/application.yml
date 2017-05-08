@@ -8,3 +8,4 @@ security:
       authorized-grant-types: authorization_code,password,refresh_token,implicit,client_credentials
       access-token-validity-seconds: 1120
       refresh-token-validity-seconds: 6001
+      resource_ids: authorization_id

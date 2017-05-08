@@ -57,10 +57,28 @@ dependencies {
 	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE')
 		 
 	compile('org.springframework.security.oauth:spring-security-oauth2')
-		
+
+	// http client
+	compile('commons-httpclient:commons-httpclient:3.1')    
+    compile('org.apache.httpcomponents:fluent-hc:4.5.3')
+    compile('org.apache.httpcomponents:httpclient:4.5.3')
+    compile('org.apache.httpcomponents:httpclient-cache:4.5.3')
+    compile('org.apache.httpcomponents:httpcore:4.4.6')
+    compile('org.apache.httpcomponents:httpmime:4.5.3')
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+	compile group: 'org.springframework', name: 'spring-jdbc'
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt
+	compile group: 'org.springframework.security', name: 'spring-security-jwt'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
+	
+    
  
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.3.RELEASE') {
 			exclude(module: 'commons-logging')
+			exclude(module: 'spring-security-oauth2')
     }
     
 	testCompile('org.springframework.security:spring-security-test')

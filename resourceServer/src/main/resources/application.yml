@@ -11,14 +11,16 @@ security:
       client-id: test
       client-secret: test123
       userInfoUri: http://localhost:8080/user
+      userAuthorizationUri: http://localhost:8080/oauth/authorize
+#      tokenInfoUri: http://localhost:8080/oauth/authorize
       tokenInfoUri: http://localhost:8080/oauth/check_token
-auth:
- server:
-  url: http://localhost:8080/oauth/check_token/
-  clientId: b4eb2531184e66c726b1
-  clientSecret: 6790afe210cd7866d46d7b34b008d7723dcd00f2
-oauth2:
- resource:
-  userInfoUri: http://localhost:8080/user
+#auth:
+# server:
+#  url: http://localhost:8080/oauth/check_token/
+#  clientId: test
+#  clientSecret: test123
+#oauth2:
+# resource:
+#  userInfoUri: http://localhost:8080/user
 server:
   port: 8088
