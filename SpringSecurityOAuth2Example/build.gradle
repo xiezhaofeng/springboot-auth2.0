@@ -9,7 +9,7 @@ println "nexus url : ${nexusurl}"
 
 buildscript {
 	ext {
-		springBootVersion = '1.5.3.RELEASE'
+		springBootVersion = '2.0.5.RELEASE'
 		nexusurl = System.getProperty("nexusurl") ?: "http://192.168.81.66:8081"
 		 pubrepourl= "${nexusurl}/repository/maven-public/"
 	}
