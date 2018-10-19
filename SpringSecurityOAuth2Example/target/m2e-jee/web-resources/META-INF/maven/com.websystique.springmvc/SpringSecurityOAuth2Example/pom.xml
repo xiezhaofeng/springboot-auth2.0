@@ -13,8 +13,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<springframework.version>4.3.1.RELEASE</springframework.version>
 		<springsecurity.version>4.1.1.RELEASE</springsecurity.version>
-		<springsecurityoauth2.version>2.0.10.RELEASE</springsecurityoauth2.version>
-		<jackson.library>2.7.5</jackson.library>
+		<springsecurityoauth2.version>2.0.15</springsecurityoauth2.version>
+		<jackson.library>2.9.7</jackson.library>
 	</properties>
 
 	<dependencies>
