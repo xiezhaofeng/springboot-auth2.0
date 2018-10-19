@@ -56,7 +56,7 @@ dependencies {
     compile ('org.springframework:spring-webmvc')
     compile ('org.springframework.security:spring-security-web')
     compile ('org.springframework.security:spring-security-config')
-    compile ('org.springframework.security.oauth:spring-security-oauth2')
+    compile ('org.springframework.security.oauth:spring-security-oauth2:2.0.15')
     compile ('com.fasterxml.jackson.core:jackson-databind:2.9.7')
     compile ('javax.servlet:javax.servlet-api:3.1.0')
 
