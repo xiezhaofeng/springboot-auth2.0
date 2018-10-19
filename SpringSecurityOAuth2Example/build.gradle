@@ -58,20 +58,9 @@ dependencies {
     compile ('org.springframework.security:spring-security-config')
     compile ('org.springframework.security.oauth:spring-security-oauth2')
     compile ('com.fasterxml.jackson.core:jackson-databind:2.9.7')
-//    compile ('com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.7')
     compile ('javax.servlet:javax.servlet-api:3.1.0')
 
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test') {
 			exclude(module: 'commons-logging')
     }
-    
-//    compile ('org.springframework:spring-core:4.3.1.RELEASE')
-//    compile ('org.springframework:spring-web:4.3.1.RELEASE')
-//    compile ('org.springframework:spring-webmvc:4.3.1.RELEASE')
-//    compile ('org.springframework.security:spring-security-web:4.1.1.RELEASE')
-//    compile ('org.springframework.security:spring-security-config:4.1.1.RELEASE')
-//    compile ('org.springframework.security.oauth:spring-security-oauth2:2.0.10.RELEASE')
-//    compile ('com.fasterxml.jackson.core:jackson-databind:2.9.7')
-//    compile ('com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.7')
-//    compile ('javax.servlet:javax.servlet-api:3.1.0')
 }
